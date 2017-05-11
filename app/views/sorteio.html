@@ -12,14 +12,14 @@
                     <div class="panel pan-sortear">
                         <div class="panel-heading">
                             <center>
-                                <button class="btn btn-primary btn-lg">Sortear</button>
+                                <button class="btn btn-primary btn-lg" ng-click="sorteiaCarinha()">Sortear</button>
                             </center>
                         </div>
                         <div class="panel-body">
                             <center>
-                                <h1>Nome da Pessoa</h1>
+                                <h1>{{sortudo.nome}}</h1>
                                 <div class="pessoa-sorteada">
-                                    <img src="http://placehold.it/80/30a5ff/fff" class="img-circle" width="200">
+                                    <img src="http://graph.facebook.com/{{sortudo.id}}/picture" class="img-circle" width="200">
                                 </div>
                             </center>
                         </div>
@@ -37,7 +37,7 @@
                             <ul>
                                 <li class="left clearfix" ng-repeat="pessoa in pessoas">
                                     <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle circle-custom" />
+                                        <img src="http://graph.facebook.com/{{pessoa.id}}/picture" alt="User Avatar" class="img-circle circle-custom" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">

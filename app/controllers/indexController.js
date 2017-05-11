@@ -1,5 +1,7 @@
 angular.module("botrod")
-.controller("indexCtrl", function ($scope, $routeParams) {
+.controller("indexCtrl", function ($scope, $routeParams, $rootScope, nodeAPI) {
+
+    console.log($rootScope.brinde1);
 
      $scope.quantidadeMensagens = 100;
 
@@ -9,9 +11,12 @@ angular.module("botrod")
         var scorb = 8;
         var scorc = $scope.quantidadeBrindes;
 
+        nodeAPI.getPessoas().then(function(response) {
+            console.log(response);
+        });
 
         $scope.pessoas = [
-            { nome: 'Cleriston Dantas', id: 1122221 },
+            { nome: 'Cleriston Dantas', id: 1384159873 },
             { nome: 'Salviano Ludgerio', id: 1122221 },
             { nome: 'Pedrosa', id: 1122221 },
             { nome: 'Thiago Pereira', id: 1122221 },
@@ -21,14 +26,21 @@ angular.module("botrod")
 
         $scope.qtdPessoas = $scope.pessoas.length;
 
-        $scope.brinde1 = ((100*$scope.qtdPessoas)/scora) >= 100 ? 100 : Math.round(((100*$scope.qtdPessoas)/scora));
+
+    $scope.calculaPorcentagens =  function(){
+
+        $rootScope.brinde1 = ((100*$scope.qtdPessoas)/scora) >= 100 ? 100 : Math.round(((100*$scope.qtdPessoas)/scora));
         $scope.brinde2 = ((100*$scope.qtdPessoas)/scorb) >= 100 ? 100 : Math.round(((100*$scope.qtdPessoas)/scorb));
         $scope.brinde3 = ((100*$scope.qtdPessoas)/scorc) >= 100 ? 100 : Math.round(((100*$scope.qtdPessoas)/scorc));
 
+    };
+
+    $scope.calculaPorcentagens();
 
     $('#easypiechart-teal').easyPieChart({
         scaleColor: false,
-        barColor: '#1ebfae'
+        barColor: '#1ebfae',
+
     });
 
     $('#easypiechart-orange').easyPieChart({
