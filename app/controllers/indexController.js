@@ -1,7 +1,7 @@
-angular.module('project', [])
-    .controller('Bot', function($scope) {
+angular.module("botrod")
+.controller("indexCtrl", function ($scope, $routeParams) {
 
-        $scope.quantidadeMensagens = 100;
+     $scope.quantidadeMensagens = 100;
 
         $scope.quantidadeBrindes = 12;
 
@@ -25,4 +25,25 @@ angular.module('project', [])
         $scope.brinde2 = ((100*$scope.qtdPessoas)/scorb) >= 100 ? 100 : Math.round(((100*$scope.qtdPessoas)/scorb));
         $scope.brinde3 = ((100*$scope.qtdPessoas)/scorc) >= 100 ? 100 : Math.round(((100*$scope.qtdPessoas)/scorc));
 
+
+    $('#easypiechart-teal').easyPieChart({
+        scaleColor: false,
+        barColor: '#1ebfae'
     });
+
+    $('#easypiechart-orange').easyPieChart({
+        scaleColor: false,
+        barColor: '#ffb53e'
+    });
+
+    $('#easypiechart-red').easyPieChart({
+        scaleColor: false,
+        barColor: '#f9243f'
+    });
+
+   $('#easypiechart-blue').easyPieChart({
+       scaleColor: false,
+       barColor: '#30a5ff'
+   });
+
+});

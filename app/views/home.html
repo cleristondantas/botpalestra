@@ -1,0 +1,110 @@
+ <div class="col-lg-12 main">
+
+        <script>
+            $(function() {
+                $('#easypiechart-teal').easyPieChart({
+                    scaleColor: false,
+                    barColor: '#1ebfae'
+                });
+            });
+        </script>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Informações do Bot Rod</h1>
+            </div>
+        </div><!--/.row-->
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 col-lg-6">
+                        <div class="panel panel-orange panel-widget">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <svg class="glyph stroked empty-message"><use xlink:href="#stroked-empty-message"></use></svg>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large">{{quantidadeMensagens}}</div>
+                                    <div class="text-muted">Mensagens</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-lg-6">
+                        <div class="panel panel-teal panel-widget">
+                            <div class="row no-padding">
+                                <div class="col-sm-3 col-lg-5 widget-left">
+                                    <svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
+                                </div>
+                                <div class="col-sm-9 col-lg-7 widget-right">
+                                    <div class="large">{{qtdPessoas}}</div>
+                                    <div class="text-muted">Pessoas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body easypiechart-panel">
+                                <h4>Libera 3 brindes</h4>
+                                <div class="easypiechart" id="easypiechart-orange" data-percent="{{brinde1}}" ><span class="percent">{{brinde1}}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body easypiechart-panel">
+                                <h4>Libera 8 brindes</h4>
+                                <div class="easypiechart" id="easypiechart-teal" data-percent="{{brinde2}}" ><span class="percent">{{brinde2}}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body easypiechart-panel">
+                                <h4>Libera 12 brindes</h4>
+                                <div class="easypiechart" id="easypiechart-red" data-percent="{{brinde3}}" ><span class="percent">{{brinde3}}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.row-->
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="panel panel-default chat">
+                            <div class="panel-heading" id="accordion"><svg class="glyph stroked two-messages"><use xlink:href="#stroked-two-messages"></use></svg> Quem conversou com o bot?</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li class="left clearfix" ng-repeat="pessoa in pessoas">
+                                        <span class="chat-img pull-left">
+                                            <img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle circle-custom" />
+                                        </span>
+                                        <div class="chat-body clearfix">
+                                            <div class="header">
+                                                <strong class="primary-font">{{pessoa.nome}}</strong>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div><!--/.col-->
+                </div><!--/.row-->
+            </div>
+        </div><!--/.row-->
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#/sorteio" class="btn btn-primary">Sorteio</a>
+            </div>
+        </div>
+
+    </div>  <!--/.main-->

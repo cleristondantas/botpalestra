@@ -1,0 +1,22 @@
+.circle-custom{
+    width: 30px !important;
+}
+
+.chat ul li.left .chat-body {
+    margin-left: 45px;
+    margin-top: 3px;
+}
+
+.chat ul li {
+    margin-bottom: 0px;
+    padding: 5px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.sorteado {
+    color: #1ebfae;
+}
+
+.pessoa-sorteada{
+    margin-top: 50px;
+}
