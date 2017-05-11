@@ -40,7 +40,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body easypiechart-panel">
                                 <h4>Libera 3 brindes</h4>
-                                <div class="easypiechart" id="easypiechart-orange" data-percent="{{brinde1}}" ><span class="percent">{{brinde1}}%</span>
+                                <div class="easypiechart" id="easypiechart-orange" data-percent="67" ><span class="percent">{{brinde1}}%</span>
                                 </div>
                             </div>
                         </div>
@@ -78,11 +78,11 @@
                                 <ul>
                                     <li class="left clearfix" ng-repeat="pessoa in pessoas">
                                         <span class="chat-img pull-left">
-                                            <img src="http://graph.facebook.com/{{pessoa.id}}/picture" alt="User Avatar" class="img-circle circle-custom" />
+                                            <img src="http://graph.facebook.com/{{pessoa.fb_id}}/picture" alt="User Avatar" class="img-circle circle-custom" />
                                         </span>
                                         <div class="chat-body clearfix">
                                             <div class="header">
-                                                <strong class="primary-font">{{pessoa.nome}}</strong>
+                                                <strong class="primary-font">{{pessoa.fb_name}}</strong>
                                             </div>
                                         </div>
                                     </li>

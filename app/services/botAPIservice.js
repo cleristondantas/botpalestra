@@ -1,6 +1,8 @@
 angular.module("botrod")
     .factory("nodeAPI", function ($http, config) {
 
+    $http.defaults.headers.post["Content-Type"] = "application/json";
+
     var _getQtdMensagens = function () {
         // return $http.get(config.baseUrl + "url");
     };

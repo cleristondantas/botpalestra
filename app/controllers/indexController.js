@@ -11,18 +11,23 @@ angular.module("botrod")
         var scorb = 8;
         var scorc = $scope.quantidadeBrindes;
 
+        $scope.pessoas = '';
+
         nodeAPI.getPessoas().then(function(response) {
-            console.log(response);
+
+            console.log(response.data.users);
+            $scope.pessoas = response.data.users;
+
         });
 
-        $scope.pessoas = [
-            { nome: 'Cleriston Dantas', id: 1384159873 },
-            { nome: 'Salviano Ludgerio', id: 1122221 },
-            { nome: 'Pedrosa', id: 1122221 },
-            { nome: 'Thiago Pereira', id: 1122221 },
-            { nome: 'Marcia Santos', id: 1122221 },
+        // $scope.pessoas = [
+        //     { nome: 'Cleriston Dantas', id: 1384159873 },
+        //     { nome: 'Salviano Ludgerio', id: 1122221 },
+        //     { nome: 'Pedrosa', id: 1122221 },
+        //     { nome: 'Thiago Pereira', id: 1122221 },
+        //     { nome: 'Marcia Santos', id: 1122221 },
 
-        ];
+        // ];
 
         $scope.qtdPessoas = $scope.pessoas.length;
 
