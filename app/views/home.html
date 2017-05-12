@@ -40,12 +40,10 @@
                         <div class="panel panel-default">
                             <div class="panel-body easypiechart-panel">
                                 <h4>Libera 3 brindes</h4>
-                                <div class="easypiechart" id="easypiechart-orange" data-percent="67" ><span class="percent">{{brinde1}}%</span>
+                                <div class="easypiechart" id="easypiechart-orange" data-percent="{{brinde1}}" ><span class="percent">{{brinde1}}%</span>
                                 </div>
                             </div>
                         </div>
-                        <input type="text" ng-model="qtdPessoas" name="brinde">
-                        <button ng-click="calculaPorcentagens()">c</button>
                     </div>
 
                     <div class="col-xs-6 col-md-4">
@@ -78,11 +76,11 @@
                                 <ul>
                                     <li class="left clearfix" ng-repeat="pessoa in pessoas">
                                         <span class="chat-img pull-left">
-                                            <img src="http://graph.facebook.com/{{pessoa.fb_id}}/picture" alt="User Avatar" class="img-circle circle-custom" />
+                                            <img src="http://graph.facebook.com/{{pessoa.id}}/picture" onerror="this.src='images/default.gif'" alt="User Avatar" class="img-circle circle-custom" />
                                         </span>
                                         <div class="chat-body clearfix">
                                             <div class="header">
-                                                <strong class="primary-font">{{pessoa.fb_name}}</strong>
+                                                <strong class="primary-font">{{pessoa.nome}}</strong>
                                             </div>
                                         </div>
                                     </li>
@@ -97,7 +95,7 @@
         </div><!--/.row-->
         <div class="row">
             <div class="col-md-12">
-                <a href="#/sorteio" class="btn btn-primary">Sorteio</a>
+                <a ng-href="/#!sorteio" class="btn btn-primary">Sorteio</a>
             </div>
         </div>
 

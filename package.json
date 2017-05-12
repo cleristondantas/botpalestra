@@ -1,0 +1,22 @@
+{
+  "name": "botpalestra",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleristondantas/botpalestra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleristondantas/botpalestra/issues"
+  },
+  "homepage": "https://github.com/cleristondantas/botpalestra#readme",
+  "dependencies": {
+    "socket.io": "^2.0.1"
+  }
+}

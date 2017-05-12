@@ -2,6 +2,11 @@
     width: 30px !important;
 }
 
+.circle-custom-footer{
+    width: 50px !important;
+}
+
+
 .chat ul li.left .chat-body {
     margin-left: 45px;
     margin-top: 3px;
@@ -19,4 +24,30 @@
 
 .pessoa-sorteada{
     margin-top: 50px;
+}
+
+.chat .panel-body {
+    height: 343px;
+}
+
+
+.lista-participantes{
+    width: 80px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+
+.img-participante{
+    width: 80px;
+    text-align: center;
+}
+
+.nome-participante{
+    font-size: 10px;
+}
+
+
+.opaco{
+    opacity: 0.3;
 }

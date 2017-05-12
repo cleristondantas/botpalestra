@@ -12,14 +12,14 @@
                     <div class="panel pan-sortear">
                         <div class="panel-heading">
                             <center>
-                                <button class="btn btn-primary btn-lg" ng-click="sorteiaCarinha()">Sortear</button>
+                                <button class="btn btn-primary btn-lg" ng-click="sorteiaCarinha()" ng-disabled="desabilitaBotao">Sortear</button>
                             </center>
                         </div>
                         <div class="panel-body">
                             <center>
                                 <h1>{{sortudo.nome}}</h1>
                                 <div class="pessoa-sorteada">
-                                    <img src="http://graph.facebook.com/{{sortudo.id}}/picture" class="img-circle" width="200">
+                                    <img src="http://graph.facebook.com/{{sortudo.id}}/picture" onerror="this.src='images/default.gif'" class="img-circle" alt="{{sortudo.nome}}" width="200">
                                 </div>
                             </center>
                         </div>
@@ -32,12 +32,12 @@
                 <div class="col-md-12">
 
                     <div class="panel panel-default chat">
-                        <div class="panel-heading" id="accordion"><svg class="glyph stroked group"><use xlink:href="#stroked-group"></use></svg>Participantes / <span class="sorteado">Sorteados</span></div>
+                        <div class="panel-heading" id="accordion"><span class="sorteado">Sorteados</span></div>
                         <div class="panel-body">
                             <ul>
-                                <li class="left clearfix" ng-repeat="pessoa in pessoas">
+                                <li class="left clearfix" ng-repeat="pessoa in pessoas | filter:{sorteado:true}">
                                     <span class="chat-img pull-left">
-                                        <img src="http://graph.facebook.com/{{pessoa.id}}/picture" alt="User Avatar" class="img-circle circle-custom" />
+                                        <img src="http://graph.facebook.com/{{pessoa.id}}/picture" alt="{{pessoa.nome}}" onerror="this.src='images/default.gif'" class="img-circle circle-custom" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
@@ -52,6 +52,28 @@
 
                 </div><!--/.col-->
             </div><!--/.row-->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Participantes / Total ({{qtdPessoas}})
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li class="left clearfix lista-participantes" ng-repeat="pessoa in pessoas" ng-class="{'opaco' : pessoa.sorteado}">
+                            <div class="chat-img pull-left img-participante">
+                                <img src="http://graph.facebook.com/{{pessoa.id}}/picture" onerror="this.src='images/default.gif'" alt="{{pessoa.nome}}" class="img-circle circle-custom-footer" />
+                            </div>
+                            <span class="nome-participante">
+                                {{pessoa.nome}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
