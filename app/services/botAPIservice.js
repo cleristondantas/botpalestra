@@ -11,9 +11,14 @@ angular.module("botrod")
         return $http.get(config.baseUrl + "users");
     };
 
+    var _sendGanhador = function(userid) {
+        return $http.post("https://arrozcompequi.herokuapp.com/winner", userid);
+    }
+
     return {
         getQtdMensagens: _getQtdMensagens,
-        getPessoas: _getPessoas
+        getPessoas: _getPessoas,
+        sendGanhador:_sendGanhador
     };
 
 });

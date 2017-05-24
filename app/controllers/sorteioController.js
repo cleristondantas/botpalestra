@@ -79,6 +79,9 @@ function podeSortear(){
             this._qtdSorteado++;
             sorteado.sorteado = true;
             this._participantes[posicao] = sorteado;
+
+
+            nodeAPI.sendGanhador(sorteado);
             // console.log('qtd sorteado: ', this._qtdSorteado);
             // console.log('sorteados: ', this._sorteados);
             // console.log('sorteado: ', sorteado);
